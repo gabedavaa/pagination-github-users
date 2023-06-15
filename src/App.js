@@ -6,7 +6,6 @@ function App() {
   const { loading, data } = useFetch();
   const [page, setPage] = useState(0);
   const [followers, setFollowers] = useState([]);
-  console.log(followers);
   useEffect(() => {
     if (loading) return;
     setFollowers(data[page]);
@@ -60,7 +59,7 @@ function App() {
                 <button
                   key={index}
                   className={`page-btn ${index === page ? "active-btn" : null}`}
-                  onClick={handlePage(index)}
+                  onClick={() => handlePage(index)}
                 >
                   {index + 1}
                 </button>
